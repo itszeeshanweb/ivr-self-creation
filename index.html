@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Krunal Wankhede">
+    <title>IVR Self Creation </title>
+    <!-- <link rel="icon" href="img/favicon.png" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/roboto-font.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/CenturyGothic/stylesheet.css">
+</head>
+
+<body>
+    <aside class="left-section">
+        <div class="title-box">
+            <h5>Project Objects</h5>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item answer-call-menu">
+                <a href="#" class="nav-link"><img src="img/menu-answer-call.png" alt=""> Answer</a>
+                <div class="draggable"></div>
+            </li>
+            
+            <li class="nav-item play-menu">
+                <a href="#" class="nav-link"><img src="img/menu-play.png" alt=""> Play</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/menu-db-query.png" alt=""> GetInput</a>
+            </li>
+            <li class="nav-item prompt-menu">
+                <a href="#" class="nav-link"><img src="img/menu-prompt.png" alt=""> Prompt</a>
+            </li>
+            <li class="nav-item speak-menu">
+                <a href="#" class="nav-link"><img src="img/menu-speak.png" alt=""> Speak</a>
+            </li>
+            <li class="nav-item hang-up-menu">
+                <a href="#" class="nav-link"><img src="img/menu-hang-up.png" alt=""> Hang Up</a>
+            </li>
+            <li class="nav-item db-connect-menu">
+                <a href="#" class="nav-link"><img src="img/menu-db-connect.png" alt=""> DB Connect</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/menu-db-query.png" alt=""> DB query</a>
+            </li>
+            <li class="nav-item reject-menu">
+                <a href="#" class="nav-link"><img src="img/menu-reject.png" alt=""> Reject</a>
+            </li>
+            <li class="nav-item record-menu">
+                <a href="#" class="nav-link"><img src="img/record.png" alt=""> Record</a>
+            </li>
+            <li class="nav-item playback-menu">
+                <a href="#" class="nav-link"><img src="img/playback.png" alt=""> Playback</a>
+            </li>
+            <li class="nav-item dial-menu">
+                <a href="#" class="nav-link"><img src="img/dial.png" alt=""> Dial</a>
+            </li>
+            <li class="nav-item transfer-menu">
+                <a href="#" class="nav-link"><img src="img/transfer.png" alt=""> Transfer</a>
+            </li>
+            <li class="nav-item conference-menu">
+                <a href="#" class="nav-link"><img src="img/conference.png" alt=""> Conference</a>
+            </li>
+            <li class="nav-item callback-menu">
+                <a href="#" class="nav-link"><img src="img/callback.png" alt=""> Call Back</a>
+            </li>
+            <li class="nav-item email-menu">
+                <a href="#" class="nav-link"><img src="img/email.png" alt=""> Email</a>
+            </li>
+            <li class="nav-item sms-menu">
+                <a href="#" class="nav-link"><img src="img/sms.png" alt=""> SMS</a>
+            </li>
+            <li class="nav-item disposition-menu">
+                <a href="#" class="nav-link"><img src="img/disposition.png" alt="">Disposition</a>
+            </li>
+            <li class="nav-item timer-menu">
+                <a href="#" class="nav-link"><img src="img/timer.png" alt="">Timer</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/api.png" alt="">API</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/compare.png" alt="">Compare</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/time-check.png" alt="">Time Check</a>
+            </li>
+            <li class="nav-item db-query-menu">
+                <a href="#" class="nav-link"><img src="img/listen.png" alt="">Listen</a>
+            </li>
+   
+        </ul>
+    </aside>
+    <main id="mainBox"></main>
+    <aside class="right-section">
+        <div class="accordion" id="accordion_main">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="property">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseProperty" aria-expanded="false" aria-controls="collapseProperty">
+                        Property
+                    </button>
+                </h2>
+                <div id="collapseProperty" class="accordion-collapse collapse" aria-labelledby="property"
+                    data-bs-parent="#accordion_main">
+                    <div class="accordion-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-3 col-form-label text-white">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="name" placeholder="Name" value="" autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="caption" class="col-sm-3 col-form-label text-white">Caption</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" rows="3" id="caption" placeholder="Caption"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label text-white">Width</label>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-6 pr-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="autowidth" id="autowidthradio" value="autoWidth" checked>
+                                                <label class="form-check-label text-white" for="autowidthradio">
+                                                    Auto set
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="autowidth" id="difinewidthradio" value="defineWidth">
+                                                <label class="form-check-label text-white" for="difinewidthradio">
+                                                    <input type="number" class="checkboxinput" id="defineWidth" disabled value=""> px
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label text-white">Height</label>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-6 pr-0">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioheight" id="autoheightradio" value="autoHeight" checked>
+                                                <label class="form-check-label text-white" for="autoheight2">
+                                                    Auto set
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioheight" id="defineheightradio" value="defineHeight">
+                                                <label class="form-check-label text-white" for="autoheight2">
+                                                    <input type="number" class="checkboxinput" id="defineHeight" disabled value=""> px
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group row">
+                                <label for="x-axis" class="col-sm-3 col-form-label">X-axis</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="checkboxinput" id="x-axis" value=""> px
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="y-axis" class="col-sm-3 col-form-label">Y-axis</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="checkboxinput" id="y-axis" value=""> px
+                                </div>
+                            </div> -->
+                            <div class="form-group text-center">
+                                <button type="button" class="btn btn-sm custom-btn" onclick="saveBtn()">Save</button>
+                                <button type="button" class="btn btn-sm custom-btn-border btn-outline-dark">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="message">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseMessage" aria-expanded="false" aria-controls="collapseMessage">
+                        Message
+                    </button>
+                </h2>
+                <div id="collapseMessage" class="accordion-collapse collapse" aria-labelledby="message"
+                    data-bs-parent="#accordion_main">
+                    <div class="accordion-body text-white text-justify">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                        collapse plugin adds the appropriate classes that we use to style each element. These classes
+                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
+                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                        does limit overflow.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
